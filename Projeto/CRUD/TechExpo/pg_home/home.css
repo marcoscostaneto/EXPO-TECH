@@ -1,0 +1,386 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, Sans-Serif;
+  }
+  
+  
+  .bodyHome{
+   max-height: 100%; 
+   max-width: 100%;
+  
+    overflow-x: hidden;
+  
+  }
+  
+  
+  .header{
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../Te2.jpg');
+    background-position: center;
+    background-size: cover;
+    
+    
+  }
+  
+  .bodyHome a{
+    text-decoration: none;
+  }
+  
+  .header .menuHome{
+    position: fixed;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+  }
+  
+  .header .menuHome li{  
+    display: inline-block;
+    transition:all 0.4s ease-in-out;
+    flex-wrap: nowrap;
+  }
+  
+  .header .menuHome li:hover{  
+    display: inline-block;
+    animation: subir 0.5s linear forwards;
+    cursor: pointer;
+  }
+  
+  .header .menuHome a{
+    color: white;
+    padding: 8px 12px;
+    border-radius: 3px ;
+    transition: 200ms;
+    
+  }
+  
+  .header .menuHome li a:hover{
+    color: #444;
+    background-color: white;
+  }
+  
+  
+  .principalHome{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  
+  .principalHome h1{
+    color: white;
+    font-size: 45px;
+    z-index: 2;
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+  }
+  
+  .principalHome h1:hover{
+    cursor: default;
+  }
+  
+  .menuHome .Logo:hover{
+    cursor: default;
+   
+  }
+  
+  
+  .principalHome .descricao a{
+    color: white;
+    padding: 10px 10px;
+    display: inline-block;
+    border: 2px solid white;
+    margin-top: 20px;
+    border-radius: 3px;
+    transition: 200ms;
+  }
+  
+  .principalHome .descricao a:hover{
+    color: black;
+    background: linear-gradient(90deg,#2196f3,#00FFFF,#00FFFF,#2196f3,#2196f3);
+    background-size:400%;
+    animation: colors 10s linear infinite forwards;
+    border-radius: 15px;
+    transition:all 0.5s ease-in-out;
+    cursor: pointer;
+    
+  
+  }
+
+
+ 
+
+
+  
+  
+  
+  
+  @keyframes subir{
+    100%{
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes subirMobile{
+    100%{
+      transform: translateY(-1vh);
+    }
+  }
+  
+  
+  
+  @keyframes colors {
+    100%{
+      background-position: 400%;
+       
+    }
+  }
+  
+  
+  
+  @media (orientation: portrait){
+    .principalHome h1{
+    
+    font-size: 6vh;
+    }
+    
+    
+    .header .menuHome a, .principalHome .descricao a{
+    font-size: 2vh;
+    }
+    
+    
+    .header .menuHome{
+      padding: 4vh;
+    }
+    
+    .header .menuHome a{
+      padding: 1.5vh 2vh;
+      border-radius: 5%;
+    }
+    
+    
+    .header .menuHome li:hover{  
+    display: inline-block;
+    animation: subirMobile 0.4s linear forwards;
+    cursor: pointer;
+  }
+  
+  .principalHome .descricao a{
+    padding: 1.5vh 2vh;
+    border: 2px solid white;
+    border-radius: 4% ;
+    margin-top: 4vh;
+  }
+  
+  .principalHome .descricao a:hover{
+    border-radius: 5vh;
+  }
+  
+  .principalHome .pacDiv .principal{
+    height: 6vh;
+    width: 6vh;
+  }
+  
+  
+  .principalHome .pacDiv .principal2{
+    height: 6vh;
+    width: 6vh;
+  }
+  
+  .bodyHome{
+    overflow-x: hidden;
+  }
+  
+  .principalHome .principal{
+    animation:walk 2s linear backwards;
+    -webkit-animation:walk 2s linear backwards;
+  }
+  
+  .principalHome .principal2{
+    animation:walk2 2s linear backwards;
+    -webkit-animation:walk2 2s linear backwards;
+  }
+  }
+  
+  
+  
+  
+  
+  
+  /*pac*/
+  
+  :root{
+  --duraçãoPac: .1s;
+  --delayPac: 0;
+  }
+  
+  
+  .pacDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  
+  
+  
+  
+  
+  
+  .principal{
+  animation:walk 4s linear backwards;
+  position: relative;
+  height: 50px;
+  width: 50px;
+  
+  animation-delay: var(--delayPac);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  
+  }
+  
+  
+  .principal2{
+  animation:walk2 4s linear backwards;
+  position: relative;
+  height: 50px;
+  width: 50px;
+  
+  animation-delay: var(--delayPac);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  }
+  
+  /*.principal:hover{
+    animation-play-state: paused;
+  }*/
+  
+  
+  .cancelar{
+  position: absolute;
+  color: transparent;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  .box{
+  color: red;
+  position: relative;
+  background: conic-gradient( from 60deg,transparent 60deg, yellow 60deg 115deg,yellow 115deg);
+  height:100%;
+  width: 100%;
+  border-radius: 100px 100px 100px 100px;
+  animation:mouth alternate infinite;
+  animation-delay: var(--delayPac);
+  animation-duration: var(--duraçãoPac);
+  z-index: -30;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  @keyframes mouth{
+  0%{
+  background: conic-gradient( from 60deg,transparent 60deg, yellow 60deg 115deg,yellow 115deg);
+  
+  }
+  20%{
+  background: conic-gradient( from 65deg,transparent 50deg, yellow 50deg 115deg,yellow 115deg);
+  }
+  40%{
+  background: conic-gradient( from 70deg,transparent 40deg, yellow 40deg 115deg,yellow 115deg);
+  }
+  60%{
+  background: conic-gradient( from 75deg,transparent 30deg, yellow 30deg 115deg,yellow 115deg);
+  }
+  80%{
+  background: conic-gradient( from 80deg,transparent 20deg, yellow 20deg 115deg,yellow 115deg);
+  }
+  90%{
+  background: conic-gradient( from 85deg,transparent 10deg, yellow 10deg 115deg,yellow 115deg);
+  }
+  100%{
+  background: conic-gradient( from 75deg,yellow 40deg, yellow 40deg 145deg,yellow 145deg);
+  
+  }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  @keyframes walk{
+  0%{
+  transform: translateX(-50vw);
+  z-index: 1;
+  }
+  95%{ transform: translateX(70vw); opacity: 1; z-index: 1; -webkit-transform: translateX(70vw); -moz-transform: translateX(70vw); -ms-transform: translateX(70vw); -o-transform: translateX(70vw);
+  }
+  100%{ transform: translateX(70vw); opacity: 0; z-index: 1; -webkit-transform: translateX(70vw); -moz-transform: translateX(70vw); -ms-transform: translateX(70vw); -o-transform: translateX(70vw);
+  }
+  
+  }
+  
+  
+  @keyframes nada{
+  0%{
+  background: transparent;
+  }
+  100%{
+  background: transparent;
+  
+  }
+  }
+  
+  
+  @keyframes walk2{
+  0%{
+  transform: translateX(-50vw);
+  z-index: 1;
+  }
+  95%{ transform: translateX(70vw); opacity: 1; z-index: 1; -webkit-transform: translateX(70vw); -moz-transform: translateX(70vw); -ms-transform: translateX(70vw); -o-transform: translateX(70vw);
+  }
+  100%{ transform: translateX(70vw); opacity: 0; z-index: 1; -webkit-transform: translateX(70vw); -moz-transform: translateX(70vw); -ms-transform: translateX(70vw); -o-transform: translateX(70vw);
+  }
+  
+  }
+  
+  
+  @media (max-width: 480px){
+    .header{
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../Te2.jpg');
+    background-position: center;
+    background-size: cover;
+    overflow-x: hidden;
+    
+  }
+  
+  .bodyHome{
+    overflow-x: hidden;
+  }
+  }
+  

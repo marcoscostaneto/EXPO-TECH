@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+
+* {
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;    
+}
+
+body{
+    background-color: rgb(236, 236, 236);
+}
+
+.voltar{
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 25px;
+    background-color: yellow;
+
+ 
+}
+
+
+.game-board {
+    
+    width: 100vw;
+    height: 100vh;
+    border-top: 800px;
+    
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    /*background: linear-gradient(#87CEE8, #E0F6FF);*/
+    background: url("./images/night.gif");
+    
+    background-size: cover;
+    
+   
+}
+
+
+.backgroundAnimate{
+   animation: fundo 30s linear infinite;
+}
+
+.backgroundAnimateStop{
+  animation-play-state: paused;
+}
+
+
+@media (orientation: portrait){
+  
+  .game-board {
+    background: linear-gradient(#87CEE8, #E0F6FF);
+  }
+  
+
+}
+
+
+/*@media (orientation: landscape){
+.game-board  .clouds-1 {
+        position: absolute;
+    width: 550px;
+    bottom: 40vh;
+    z-index: 1;
+    opacity: 0;
+    animation: clouds-animation-1 40s infinite linear;
+  }
+  
+  .game-board  .clouds-2{
+    position: absolute;
+    width: 270px;
+    padding-top: 150px;
+    z-index: 1;
+    opacity: 0;
+    animation: clouds-animation-2 50s infinite linear;
+  }
+  
+    .game-board  .clouds-3{
+        position: absolute;
+    width: 150px;
+    padding-top: 300px;
+    z-index: 1;
+    opacity: 0;
+    animation: clouds-animation-3 75s infinite linear;
+  }
+  
+}
+
+@keyframes fundo{
+  
+  0%{
+    background-position-x: 107.9%;
+  }
+  
+  100%{
+    background-position-x: 0;
+  }
+}
+
+
+/*=============== Mario ===============*/
+
+.mario {
+    width: 60px;
+    position: absolute;
+    bottom: 0;
+    margin-left: 100px;
+    padding-bottom: 34px;
+    z-index: 10;
+}
+
+
+.game-over-animation{
+    animation: gameOver 1.7s linear 1 forwards 1s;
+}
+
+
+
+
+@keyframes gameOver{
+25%{
+
+    transform: translateY(-20vh);
+}
+
+99%{
+
+    transform: translateY(50vh);
+    opacity: 1;
+}
+100%{
+
+    transform: translateY(50vh);
+    opacity: 0;
+}
+
+}
+
+.jump{
+    animation: mario-jump-animation 1500ms ease-out;
+    color: black;
+}
+
+@keyframes mario-jump-animation {
+    0%{
+        bottom: 0px;
+    }
+    45%{
+        bottom: 180px
+    }
+    55%{
+        bottom: 180px;
+    }
+    100%{
+        bottom:0px;
+    }
+    
+}
+
+
+
+
+
+
+/*=============== Cenário ===============*/
+
+/*Tubulação */
+.pipe {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    right: -80px;
+    padding-bottom: 34px;
+    z-index: 10;
+}
+
+.pipe-animation{
+    animation: grass-animation 3s infinite linear;
+}
+
+
+/*fantasma*/
+
+
+.plant {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    right: -80px;
+    padding-bottom: 280px;
+    z-index: 10;
+}
+
+.plant-animation{
+    animation: grass-animation 2s infinite linear 4.5s;
+}
+
+
+/*fim fantasma*/
+
+
+.animation-paused{
+    animation-play-state: paused;
+}
+
+@keyframes pipe-animation {
+    from{
+        right: -80px;
+    }
+    to{
+        right: 100%;
+    }
+    
+}
+
+/*Grama */
+.grass {
+    position: absolute;
+    bottom: 0;
+    width: 160px;
+    right: -160px;
+    padding-bottom: 34px;
+    z-index: 3;
+}
+
+.grass-animation{
+    animation: grass-animation 3s infinite linear;
+}
+
+@keyframes grass-animation {
+    from{
+        right: -80px;
+    }
+    to{
+        right: 100%;
+    }
+    
+}
+
+
+/*Piso*/
+.floor {
+        width: 1500px;
+        position: absolute;
+        bottom: 0;
+        padding-bottom: 34px;
+        z-index: 10;
+        background: green;
+       
+}
+.floor-1{
+    position: absolute;  
+    z-index: 0;
+}
+
+.floor-animation-1{
+    animation: floor-animation-1 3.1s infinite linear;
+}
+
+@keyframes floor-animation-1 {
+    0%{
+        right:0px;
+    }
+    100%{
+        right: 100%;    
+    }
+}
+
+
+
+
+.floor-2{
+    position: absolute; 
+    right: -1500px;
+    z-index: 10;
+}
+
+.floor-animation-2{
+    animation: floor-animation-2 6.2s infinite linear;
+}
+
+@keyframes floor-animation-2 {
+    0%{
+        right:-1500px;
+    }
+    100%{
+        right: 100%;    
+    }
+}
+
+
+
+
+.floor-3{
+    position: absolute;  
+    right: -1500px;
+    z-index: 10;
+}
+
+.floor-animation-3{
+    animation: floor-animation-3 6.2s infinite linear;
+}
+
+@keyframes floor-animation-3 {
+    0%{
+        right:-1500px;
+    }
+    100%{
+        right: 100%;    
+    }
+}
+
+
+
+
+/*Nuvens*/
+.clouds-1 {
+    position: absolute;
+    width: 55vh;
+    padding-top: 2vh;
+    z-index: 1;
+    opacity: 1;
+    animation: clouds-animation-1 40s infinite linear;
+}
+.clouds-2 {
+    position: absolute;
+    width: 27vh;
+    padding-top: 15vh;
+    z-index: 1;
+    opacity: 1;
+    animation: clouds-animation-2 50s infinite linear;
+}
+.clouds-3 {
+    position: absolute;
+    width: 15vh;
+    padding-top: 50vh;
+    margin-bottom: 30vh;
+    z-index: 1;
+    opacity: 1;
+    animation: clouds-animation-3 75s infinite linear;
+}
+
+
+@keyframes clouds-animation-1 {
+    from{
+        right: -550px;
+    }
+    to{
+        right: 100%;
+    }
+}
+
+@keyframes clouds-animation-2 {
+    from{
+        right: -1300px;
+    }
+    to{
+        right: 100%;
+    }
+}
+
+@keyframes clouds-animation-3 {
+    from{
+        right: -250px;
+    }
+    to{
+        right: 100%;
+    }
+}
+
+
+p {
+    font-family:'Roboto Mono', monospace;
+    padding: 50px;
+    text-align: center;
+    color: white;
+}

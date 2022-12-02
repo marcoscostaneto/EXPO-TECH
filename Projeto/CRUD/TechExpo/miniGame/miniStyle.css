@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    cursor: default;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #0C192C;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+h2{
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    color: aliceblue;
+    z-index: 9;
+}
+
+.caixa{
+    position: relative;
+    width: 600px;
+    height: 200px;
+    /*background: #000;*/
+
+    border-bottom: 2px solid #555;
+    display: flex;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 0 0 10px #4FC3DC44,
+    0 0 50px #4FC3DC;
+    transition: box-shadow 1s ease-in-out;
+}
+
+
+.caixa label{
+    position: relative;
+    width: 100%;
+    height: 33.333%;
+    border-top: 2px solid transparent;
+    border-left:  2px solid transparent;
+    border-right: 2px solid transparent ;
+    border-bottom: none;
+
+}
+
+
+.caixa label input{
+    position: relative;
+    appearance: none;
+    z-index: 10;
+}
+
+.caixa label i{
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 9;
+background-size: 600px;
+}
+
+
+
+.caixa label:nth-child(1) i{
+    background-image: url(imgs/01.jpg);
+    animation: swap 0.5s steps(3) infinite;
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+}
+
+.caixa label:nth-child(2) i{
+    background-image: url(imgs/02.jpg);
+    animation: swap 0.4s steps(3) infinite;
+    cursor: pointer;
+}
+
+
+.caixa label:nth-child(3) i{
+    background-image: url(imgs/03.jpg);
+    animation: swap 0.7s steps(3) infinite;
+    border-radius: 0 0 5px 5px;
+    cursor: pointer;
+}
+
+
+.caixa label input:checked ~ i{
+    animation-play-state: paused;
+}
+
+
+.sorte{
+    animation: swap 0.05s steps(3) infinite;
+}
+
+
+
+.botoes{
+    display: flex;
+    align-items: center;
+    z-index:10;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+.reiniciar{
+margin-top: 40px;
+border: none;
+border-radius: 5px;
+font-size: 1.25em;
+padding: 10px 25px;
+background: 	#696969;
+
+color: white;
+transition: all .5s ease-in-out;
+cursor: pointer;
+}
+
+.reiniciar:hover{
+    transform: translateY(-2px);
+    transition: all .3s ease-in-out;
+}
+
+.reiniciar:active{
+    background: red;
+    transform: scale(0.95);
+}
+
+
+
+.voltar{
+    margin-top: 40px;
+    border: none;
+  
+    border-radius: 5px;
+    font-size: 1.25em;
+    padding: 10px 25px;
+    background: #20B2AA;
+    color: white;
+    transition: all .5s ease-in-out;
+    cursor: pointer;
+    }
+    
+    .voltar:hover{
+        transform: translateY(-2px);
+        transition: all .3s ease-in-out;
+    }
+    
+    .voltar:active{
+        background: red;
+        transform: scale(0.95);
+    }
+
+
+
+    
+
+
+@keyframes swap{
+0%{
+    background-position: 0%;
+}
+100%{
+    background-position: 600px;
+}
+}
+
+
+
+@media(orientation: portrait){
+    h2{
+        font-size: 6vw;
+    }
+
+
+
+    .caixa{
+        position: relative;
+        width: 300px;
+        height: 100px;
+        /*background: #000;*/
+    
+        border-bottom: 2px solid #555;
+        display: flex;
+        border-radius: 5px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        box-shadow: 0 0 0 10px #4FC3DC44,
+        0 0 50px #4FC3DC;
+    }
+
+
+    .caixa label i{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: 300px;
+        }
+}
+
+
+
+
+
+
+/*bubbles*/
+
+
+.container{
+    position: absolute;
+    width: 100vw;
+    max-width: 100%;
+    overflow-x: hidden;
+    height: 100vh;
+    z-index: 8;
+    overflow-y: hidden;
+   }
+   
+   .bubbles{
+   position: absolute;
+   display: flex;
+   
+   }
+   
+   .bubbles .span{
+   position: relative;
+   width: 4vh;
+   height: 4vh;
+   margin: 0 4px;
+   background: #4FC3DC;
+   border-radius: 50%;
+   box-shadow: 0 0 0 10px #4FC3DC44,
+   0 0 50px #4FC3DC,
+   0 0 100px #4FC3DC;
+   animation:animate 15s linear infinite;
+   animation-duration: calc(125s / var(--i));
+   transition:all 0.5s ease-in-out;
+   padding: 1vh;
+   }
+   
+   
+   .bubbles .span:nth-child(even){
+   
+   background: #FF2D75;
+   box-shadow: 0 0 0 10px #FF2D7544,
+   0 0 50px #FF2D75,
+   0 0 100px #FF2D75;
+   }
+   
+   .bubbles .change{
+   position: relative;
+   width: 4vh;
+   height: 4vh;
+   margin: 0 4px;
+   background: #ffee4a;
+   border-radius: 100%;
+   
+   box-shadow: 0 0 0 10px #ffee4a44,
+   0 0 50px #ffee4a,
+   0 0 100px #ffee4a;
+   animation:animate 15s linear infinite;
+   animation-duration: calc(125s / var(--i));
+   
+   transition-delay: 0.5s, 0s;
+   transition-property: opacity, border-radius;
+   transition-duration: 0.5s,0.5s;
+   opacity: 0;
+   padding: 1vh;
+   }
+   
+   
+   .bubbles .change02{
+   position: relative;
+   width: 4vh;
+   height: 4vh;
+   margin: 0 4px;
+   background: #7CFC00;
+   border-radius:  100%;
+   
+   box-shadow: 0 0 0 10px #7CFC0044,
+   0 0 50px	#7CFC00,
+   0 0 100px #7CFC00;
+   animation:animate 15s linear infinite;
+   animation-duration: calc(125s / var(--i));
+   
+   transition-delay: 0.5s, 0s;
+   transition-property: opacity, border-radius;
+   transition-duration: 0.5s,0.5s;
+   opacity: 0;
+   padding: 1vh;
+   }
+   
+   
+
+   
+   @keyframes animate{
+   0%{
+   transform: translateY(100vh) scale(0);
+   transition:all 0.5s ease-in-out;
+   }
+   100%{
+   transform: translateY(-10vh) scale(1);
+   transition:all 0.5s ease-in-out;
+   }
+   }
